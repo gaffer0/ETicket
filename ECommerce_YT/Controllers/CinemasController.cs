@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce_YT.Controllers
 {
-    public class MoviesController : Controller
+    public class CinemasController : Controller
     {
         private readonly AppDbContext _context;
-        public MoviesController(AppDbContext context)
+        public CinemasController(AppDbContext context)
         {
             _context = context;
         }
