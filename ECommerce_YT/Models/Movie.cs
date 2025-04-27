@@ -19,7 +19,7 @@ namespace ECommerce_YT.Models
         public Cinema? Cinema { get; set; }
         public int CinemaId { get; set; }
         public int ProducerId { get; set; }
-        public Producer Producer { get; set; }
+        public Producers Producer { get; set; }
 
     }
 }

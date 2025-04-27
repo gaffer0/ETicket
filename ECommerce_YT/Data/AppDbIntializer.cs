@@ -39,15 +39,15 @@ namespace ECommerce_YT.Data
                     // Producer
                     if (!context.Producers.Any())
                     {
-                        context.Producers.AddRange(new List<Producer>()
+                        context.Producers.AddRange(new List<Producers>()
                     {
-                        new Producer()
+                        new Producers()
                         {
                             FullName = "Producer 1",
                             Bio = "Bio 1",
                             ProfilePictureURL= "https://example.com/profile1.png"
                         },
-                        new Producer()
+                        new Producers()
                         {
                             FullName = "Producer 2",
                             Bio = "Bio 2",
