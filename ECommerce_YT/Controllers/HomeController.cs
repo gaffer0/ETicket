@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using ECommerce_YT.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce_YT.Controllers
@@ -18,15 +16,7 @@ namespace ECommerce_YT.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+
     }
 }

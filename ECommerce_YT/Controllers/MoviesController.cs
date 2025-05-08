@@ -1,5 +1,6 @@
 ﻿using ECommerce_YT.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce_YT.Controllers
 {
@@ -12,7 +13,10 @@ namespace ECommerce_YT.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var allmovies = _context.Movies.Include(m => m.Cinema)
+                .ToList();
+
+            return View(allmovies);
         }
     }
 }

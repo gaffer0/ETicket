@@ -1,22 +1,22 @@
-﻿using ECommerce_YT.Data;
+﻿using ECommerce_YT.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce_YT.Controllers
 {
     public class ActorController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IActorService _service;
 
-        public ActorController(AppDbContext context)
+        public ActorController(IActorService service)
         {
-            _context = context;
+            _service = service;
         }
 
 
 
         public IActionResult Index()
         {
-            var actors = _context.Actors.ToList();
+            var actors = _service.GetAll();
             return View(actors);
         }
     }

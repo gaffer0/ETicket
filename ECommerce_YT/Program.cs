@@ -1,4 +1,5 @@
 using ECommerce_YT.Data;
+using ECommerce_YT.Data.Services;
 using Microsoft.EntityFrameworkCore;
 using static ECommerce_YT.Data.AppDbIntializer;
 
@@ -11,15 +12,15 @@ namespace ECommerce_YT
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+
             builder.Services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(
                    builder.Configuration.GetConnectionString("cs")
                )
            );
-
-
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IActorService, ActorService>();
 
 
             var app = builder.Build();

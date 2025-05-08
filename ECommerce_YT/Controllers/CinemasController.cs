@@ -12,7 +12,8 @@ namespace ECommerce_YT.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var allcinemas = _context.Cinemas.ToList();
+            return View(allcinemas);
         }
     }
 }
