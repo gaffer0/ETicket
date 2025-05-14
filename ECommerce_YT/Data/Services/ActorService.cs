@@ -12,7 +12,8 @@ namespace ECommerce_YT.Data.Services
         }
         void IActorService.Add(Actor actor)
         {
-            throw new NotImplementedException();
+            _context.Actors.Add(actor);
+            _context.SaveChanges();
         }
 
         void IActorService.Delete(int id)
@@ -28,7 +29,8 @@ namespace ECommerce_YT.Data.Services
 
         Actor IActorService.GetById(int id)
         {
-            throw new NotImplementedException();
+            var result = _context.Actors.FirstOrDefault(a => a.Id == id);
+            return result;
         }
 
         Actor IActorService.Update(int id, Actor actor)
